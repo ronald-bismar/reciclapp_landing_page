@@ -18,6 +18,14 @@ window.addEventListener('scroll', function() {
     }
 });
 
+var header = document.querySelector("header");
+
+window.addEventListener("scroll", function () {
+  const scrollY = window.scrollY;
+  if (scrollY <= 490)
+    header.style.backgroundColor = "rgba(76, 175, 80," + scrollY / 300 + ")";
+});
+
 // Add animation on scroll
 const observerOptions = {
     threshold: 0.1
