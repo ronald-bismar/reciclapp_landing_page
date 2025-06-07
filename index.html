@@ -6,6 +6,10 @@
     <title>Reciclapp - Recicla más fácil y ayuda a tu comunidad</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+      <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
 </head>
 <body>
     <!-- Header -->
@@ -70,23 +74,41 @@
         <div class="char-container">
             <div class="char-image" style="position: relative;">
                 <!-- Fondo decorativo opcional -->
-                <!-- <img src="images/Group 48.png" alt="" style="position: absolute; left: -30px; top: -30px; width: 120%; z-index: 0; opacity: 0.2;"> -->
+                <div class="char-bg-shape"></div>
                 <img src="images/cellphone2.png" alt="App Features" style="position: relative; z-index: 1;">
             </div>
             <div class="char-content">
-                <p>La app te permite ubicar a los recolectores certificados más cercanos a tu ubicación, programar la recolección de tus residuos reciclables y obtener beneficios por ayudar al planeta.</p>
-                <p>Los recolectores están capacitados y certificados para brindar un servicio de calidad.</p>
+                <p>Con reciclapp puedes realizar la venta de tus productos reciclables en unos cuantos pasos, ya que comprendemos la importancia de tu tiempo facilitamos el contacto entre compradores y vendedores de reciclaje, contactando al comprador que tiene un puesto de compra de reciclaje con el vendedor que vende el material reciclable, a traves de una aplicacion facil de usar.</p>
+                <p>Contacto facil entre compradores y vendedores</p>
+                <p>Indicadores de ahorro en emisiones de Co2 que logra el usuario</p>
             </div>
         </div>
     </section>
 
     <!-- Community Section -->
     <section class="community">
-        <div class="community-content">
-            <h2>Reciclar</h2>
-            <p>Únete a la comunidad más grande de recicladores y recolectores. Todos juntos podemos hacer la diferencia y cuidar nuestro planeta mientras generamos ingresos extras.</p>
-            <button class="join-btn">Únete ahora</button>
-        </div>
+        <div class="testimonial-slider">
+      <h3 class="testimonial-title">MISION</h3>
+
+      <!-- Testimonial List -->
+      <div class="testimonial-list" role="region" aria-label="Testimonials">
+      </div>
+      <!-- /Testimonial List -->
+
+      <!-- Button Navigation -->
+      <button class="nav prev" aria-label="Previous Testimonial">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+
+      <button class="nav next" aria-label="Next Testimonial">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+      <!-- /Button Navigation -->
+
+      <!-- Dot Navigation -->
+      <div class="dots-container"></div>
+      <!-- /Dot Navigation -->
+    </div>
         <div class="community-image">
             <img src="images/ImagenJovenes.png" alt="Community">
         </div>
@@ -95,7 +117,8 @@
     <!-- Download Section -->
     <section class="download" id="descarga">
         <h2>Descarga</h2>
-        <p>Haz tu app más disponible en las siguientes tiendas para que puedas descargar de forma fácil y sin recargo</p>
+        <p>Reciclapp esta disponible en las siguientes tiendas para que puedas acceder facilmente desde donde estes.</p>
+        <p>Descargalo y feliz reciclaje!</p>
         <div class="download-buttons">
             <a href="#" class="google-play">
                 <img src="images/buttonGooglePlay.png" alt="Get it on Google Play">
@@ -104,25 +127,54 @@
     </section>
 
     <!-- How to Use Section -->
+ 
+
     <section class="how-to-use">
-        <h2>¿Cómo puedes usarla?</h2>
-        <div class="steps">
+           <h2>¿Cómo puedes usarlo?</h2>
+
+
+           <div class="use-steps">
+
+            <div class="steps">
             <div class="step">
-                <div class="step-number">1</div>
-                <p>Registrate e inicia sesión</p>
+                <div class="text">
+                    <h3>Registrate e inicia sesión</h3>
+                    <p>Inicia sesion con tus datos</p>
+                </div>
+                <div class="circle"></div>
             </div>
             <div class="step">
-                <div class="step-number">2</div>
-                <p>Ubica al recolector más cercano</p>
+                <div class="text">
+                    <h3>Encuentra a los compradores de reciclaje mas cercanos</h3>
+                    <p>Busca en el mapa a los compradores mas cercanos para contactarlos</p>
+                </div>
+                <div class="circle"></div>
             </div>
             <div class="step">
-                <div class="step-number">3</div>
-                <p>Programa tu recolección</p>
+                <div class="text">
+                    <h3>Compara precios entre compradores</h3>
+                    <p>A traves del perfil del comprador puedes ver los precios que ofrece por cada producto reciclable para ver cual es el mejor para ti</p>
+                </div>
+                <div class="circle"></div>
             </div>
         </div>
-        <div class="step-image" style="position: relative;">
-            <img src="images/pasosDeUsoShape.png" alt="" style="position: absolute; left: 0; top: 0; width: 100%; z-index: 0; opacity: 0.3;">
-            <img src="images/Mobile Screen 2.png" alt="App Interface" style="position: relative; z-index: 1; max-width: 220px;">
+
+            <div class="step-image">
+
+            <img src="images/Mobile Screen 2.png" alt="App Interface">
+        </div>
+    
+
+       </div>
+
+    </section>
+
+    <section class="people-recycling">
+        <div class="overlay"></div>
+        <div class="content">
+            <h2>Todos juntos por<br>nuestro planeta</h2>
+            <p>Muchas cosas en casa pueden reutilizarse, por eso decidimos ser parte de la solución.</p>
+            <button class="download-cta">Descargar</button>
         </div>
     </section>
 
@@ -133,16 +185,16 @@
                 <h3>Información</h3>
                 <ul>
                     <li><a href="#">Sobre nosotros</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Nuestros servicios</a></li>
+                    <li><a href="#">Nuestra misión como empresa</a></li>
                 </ul>
             </div>
             <div class="footer-section">
                 <h3>Features</h3>
                 <ul>
-                    <li><a href="#">Recolectores</a></li>
-                    <li><a href="#">Programación</a></li>
-                    <li><a href="#">Beneficios</a></li>
+                    <li><a href="#">Buscas soluciones</a></li>
+                    <li><a href="#">Comparte</a></li>
+                    <li><a href="#">Novedades en reciclapp</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -150,7 +202,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Reciclapp. All rights reserved.</p>
+            <p>&copy; Desarrollado con ❤️ por @NextMacroSystem</p>
         </div>
     </footer>
 

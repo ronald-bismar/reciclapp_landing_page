@@ -1,11 +1,22 @@
 :root {
     --primary-color: rgb(76, 175, 80);
     --secondary-color: #2E7D32;
+    --third-color: #55BB31;
+    --fourth-color: #2563EB;
     --text-color: #333333;
     --text-color-header: #ffffff;
     --light-gray: #F5F5F5;
+    --light-gray-medium: #CBD5E1;
     --color-yellow: #FBBC05;
     --color-black: #000000;
+
+  --space-cadet: #1f2041;
+  --sunglow: #ffc857;
+  --dark-cyan: #119da4;
+  --paynes-gray: #19647e;
+  --light-color: #fff;
+  --muted-color: slategray;
+  --dot-color: #ccc;
 }
 
 * {
@@ -185,6 +196,19 @@ nav {
     justify-content: space-around;
 }
 
+.char-container .char-bg-shape {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 80%;
+    height: 80%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    opacity: 0.8;
+    background-color: var(--third-color);
+    border-radius: 50%;
+}
+
 .char-image {
     flex: 1;
     display: flex;
@@ -194,6 +218,34 @@ nav {
 
 .char-content {
     flex: 1;
+}
+
+.char-content p {
+    text-align: justify;
+    position: relative;
+    padding-left: 16px;
+}
+
+.char-content p::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.char-content p:nth-child(1)::before {
+    background: var(--fourth-color);
+}
+
+.char-content p:nth-child(2)::before {
+    background: var(--light-gray-medium);
+}
+
+.char-content p:nth-child(3)::before {
+    background: var(--light-gray-medium);
 }
 
 .char-image img {
@@ -222,13 +274,121 @@ nav {
     background: white;
 }
 
-.community-content {
-    flex: 1;
-    padding-right: 2rem;
+.testimonial-slider {
+  max-width: 800px;
+  width: 90%;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
 }
 
-.community-image {
-    flex: 1;
+.testimonial-list {
+  display: flex;
+  overflow: hidden;
+}
+
+.testimonial-slider h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--text-color);
+}
+
+.testimonial {
+  flex: 1 0 100%;
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.testimonial .bi-quote {
+  font-size: 2.5rem;
+  color: var(--sunglow);
+  opacity: 0.75;
+}
+
+.testimonial blockquote {
+    text-align: justify;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-inline: 20px;
+}
+
+.user-info {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.user-details .name {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--dark-cyan);
+}
+
+.user-details .company {
+  color: var(--muted-color);
+}
+
+/* button navigation */
+
+button {
+  cursor: pointer;
+  border: none;
+}
+
+.nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 42px;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--light-color);
+  color: var(--paynes-gray);
+  transition: 0.3s;
+}
+
+.nav:hover {
+  background-color: var(--dark-cyan);
+  color: var(--light-color);
+}
+
+.nav.prev {
+  left: 10px;
+}
+
+.nav.next {
+  right: 10px;
+}
+
+/* dot navigation */
+
+.dots-container {
+  text-align: center;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  border-radius: 5px;
+  margin-inline: 5px;
+  background-color: var(--dot-color);
+  transition: width 0.5s;
+}
+
+.dot.active {
+  width: 30px;
+  background-color: var(--paynes-gray);
 }
 
 .community-image img {
@@ -253,9 +413,20 @@ nav {
 
 /* Download Section */
 .download {
-    padding: 4rem 5%;
+    padding: 5rem 20%;
     text-align: center;
     background: var(--light-gray);
+    text-align: center;
+}
+
+.download h2{
+    font-size: 2.5rem;
+}
+
+.download p{
+    font-size: 1.4rem;
+    margin-top: 2rem;
+    font-weight: 500;
 }
 
 .download-buttons {
@@ -267,50 +438,80 @@ nav {
 }
 
 /* How to Use Section */
-.how-to-use {
-    padding: 4rem 5%;
+.how-to-use h2 {
+    font-size: 2.2rem;
+    margin: 2rem 0;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.use-steps {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     background: white;
 }
 
 .steps {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: space-between;
     margin: 3rem 0;
+    width: 40%;
+    position: relative;
 }
+
+/* Añade la línea vertical que conecta los círculos */
+.steps::before {
+    content: '';
+    position: absolute;
+    right: 24px; /* Mitad del ancho del círculo (50px/2) - mitad del ancho de la línea (2px/2) */
+    top: 50px; /* Mitad del alto del primer círculo */
+    bottom: 100px; /* Mitad del alto del último círculo */
+    width: 2px;
+    background-color: var(--primary-color);
+    z-index: 0;
+}
+
 
 .step {
-    text-align: center;
-    flex: 1;
-    max-width: 200px;
-}
-
-.step-number {
-    width: 40px;
-    height: 40px;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 50%;
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    margin: 0 auto 1rem;
+    position: relative;
+    margin: 1.5rem 0;
 }
 
-.step-image {
-    text-align: center;
-    position: relative;
-    min-height: 250px;
+.step .text {
+    width: calc(100% - 70px); /* Resta el ancho del círculo más un pequeño margen */
+    padding-right: 1rem;
+}
+
+.step .circle {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border: 2px solid var(--primary-color);
+    z-index: 1;
+}
+
+.set-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .step-image img {
-    border-radius: 30px;
-    box-shadow: 0 8px 32px rgba(76, 175, 80, 0.15);
-    background: #fff;
-    padding: 8px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Footer */
 footer {
+    margin-top: 8rem;
     background: var(--text-color);
     color: white;
     padding: 4rem 5% 2rem;
@@ -345,6 +546,72 @@ footer {
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 
+/* People Recycling Section */
+.people-recycling {
+    margin-top: 4rem;
+    position: relative;
+    min-height: 600px;
+    background-image: url('images/imageTodosJuntosPorNuestroPlaneta.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    padding: 4rem 5%;
+}
+
+.people-recycling .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(92, 209, 96, 0.64) 0%,
+        rgba(46, 125, 50, 0.85) 100%
+    );
+    z-index: 1;
+}
+
+.people-recycling .content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    max-width: 600px;
+    align-self: flex-end; /* Align to bottom */
+    margin-top: auto; /* Push content to bottom */
+}
+
+.people-recycling h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.people-recycling p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.people-recycling .download-cta {
+    background: #FBBC05;
+    color: var(--text-color);
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.people-recycling .download-cta:hover {
+    transform: translateY(-2px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-links {
@@ -371,5 +638,17 @@ footer {
 
     .footer-section {
         margin-bottom: 2rem;
+    }
+
+    .people-recycling {
+        min-height: 400px;
+    }
+
+    .people-recycling h2 {
+        font-size: 2.5rem;
+    }
+
+    .people-recycling p {
+        font-size: 1rem;
     }
 }
