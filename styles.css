@@ -19,6 +19,7 @@
   --dot-color: #ccc;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -613,42 +614,147 @@ footer {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 2.5rem;
     }
 
-    .hero, .characteristics, .community {
+    .char-image img {
+        max-width: 70%;
+    }
+
+    .feature-cards {
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    .nav-links {
+        display: none; /* Aquí deberías considerar agregar un menú hamburguesa */
+    }
+
+    /* Hero Section */
+    .hero {
         flex-direction: column;
+        padding: 6rem 5% 2rem;
         text-align: center;
     }
 
+    .hero-image img {
+        max-width: 80%;
+        margin-top: 2rem;
+    }
+
+    /* Features Section */
     .feature-cards {
         flex-direction: column;
     }
 
+    .feature-card {
+        margin-bottom: 1rem;
+    }
+
+    /* Characteristics Section */
     .char-container {
         flex-direction: column;
+        gap: 2rem;
     }
 
-    .footer-content {
-        flex-direction: column;
+    .char-content p {
         text-align: center;
+        padding: 0 1rem;
     }
 
-    .footer-section {
-        margin-bottom: 2rem;
+    /* Community Section */
+    .community {
+        flex-direction: column;
+        gap: 2rem;
     }
 
+    .testimonial-slider {
+        width: 100%;
+    }
+
+    /* How to Use Section */
+    .use-steps {
+        flex-direction: column;
+    }
+
+    .steps {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .step-image img {
+        width: 90%;
+        margin: 2rem auto;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header */
+    .logo img {
+        height: 30px;
+    }
+
+    /* Hero Section */
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+
+    /* Download Section */
+    .download {
+        padding: 3rem 10%;
+    }
+
+    .download h2 {
+        font-size: 2rem;
+    }
+
+    .download p {
+        font-size: 1.1rem;
+    }
+
+    /* People Recycling Section */
     .people-recycling {
-        min-height: 400px;
+        min-height: 300px;
     }
 
     .people-recycling h2 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
-    .people-recycling p {
-        font-size: 1rem;
+    /* Footer */
+    .footer-section {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .footer-content {
+        gap: 2rem;
+    }
+}
+
+/* Ajustes de orientación */
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        padding: 5rem 5% 2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-image img {
+        max-width: 40%;
     }
 }
